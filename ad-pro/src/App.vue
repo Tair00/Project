@@ -63,8 +63,10 @@ export default {
       {title:"New ad", icon:"mdi-note-plus-outline", url:"/new"},
       {title:"My ads", icon:"mdi-view-list-outline", url:"/list"}
       ]
+      
     }
   }
 }
 </script>
+
 
