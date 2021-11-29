@@ -14,6 +14,11 @@
         </v-list-item-content>
       </v-list-item>
 
+
+
+
+
+
       <v-divider></v-divider>
 
       <v-list dense>
@@ -117,21 +122,44 @@ class="headline mb0"
   }
 </style>
 
-
 <script>
 export default {
-    data() {
-        return {
-            drawer: false,
-            links: [
-            {title:"Login", icon:"mdi-lock", url:"/login"},
-            {title:"Registration", icon:"mdi-account", url:"/registration"},
-            {title:"Orders", icon:"mdi-bookmark-multiple-outline",url:"/orders"},
-            {title:"New ad", icon:"mdi-note-plus-outline", url:"/new"},
-            {title:"My ads", icon:"mdi-view-list-outline", url:"/list"}
-            ]
-        }
-    }
-}
+	data () { 
+		return {
+			ads:[
+			{
+				title:"First",
+				desc:"First Desc",
+				promo: true,
+				src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",
+				id:"1"
+			},
+			{
+				title:"Second",
+				desc:"Second Desc",
+				promo: true,
+				src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+				id:"2"
+			},
+			{
+				title:"Third",
+				desc:"Thitd Desc",
+				promo: true,
+				src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+				id:"3"
+			},
+			{
+				title:"Fouth",
+				desc:"Fouth Desc",
+				promo: true,
+				src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+				id:"4"
+			}
+
+			]
+		} 	
+	}
+} 
 </script>
+
 	
