@@ -25,7 +25,6 @@
 					v-model="password"
 					:rules="passwordRules" 
 					></v-text-field>
-
 					<v-text-field  
 					prepend-icon="mdi-lock" 
 					name="confirm-password" 
@@ -51,7 +50,6 @@
 		</v-layout> 
 	</v-container>
 </template>
-
 <script>
 export default {
 	data () { 
@@ -61,16 +59,17 @@ export default {
 			confirmPassword: "",
 			valid: false,
 			emailRules: [
-                v => !!v || 'E-mail is required',
-                v => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
+            v => !!v || 'E-mail is required',
+            v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+			],
 			passwordRules: [
-                v => !!v || 'Password is required',
-                v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'],
-			confirmPasswordRules: [
-				v => !!v || 'Password is required',
-				v => v === this.password || 'Password should match'
-]
-
+            v => !!v || 'Password is required',
+            v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
+            ],
+	confirmPasswordRules: [
+	v => !!v || 'Password is required',
+	v => v === this.password || 'Password should match'
+	]
 		} 	
 	},
 	methods: {

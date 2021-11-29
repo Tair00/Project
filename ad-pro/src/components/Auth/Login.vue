@@ -7,7 +7,7 @@
 				<v-toolbar-title>Login</v-toolbar-title>
 			</v-toolbar>
 				<v-card-text>
-				<v-form v-model="valid" ref="form" lazy-validation>
+					<v-form v-model="valid" ref="form" validation>
 					<v-text-field
 					prepend-icon="mdi-account" 
 					name="email" 
@@ -42,7 +42,6 @@
 		</v-layout> 
 	</v-container>
 </template>
-
 <script>
 export default {
 	data () { 
@@ -51,11 +50,13 @@ export default {
 			password: "",
 			valid: false,
 			emailRules: [
-                v => !!v || 'E-mail is required',
-                v => /.+@.+\..+/.test(v) || 'E-mail must be valid'],
+            v => !!v || 'E-mail is required',
+            v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+			],
 			passwordRules: [
-                v => !!v || 'Password is required',
-                v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters']
+            v => !!v || 'Password is required',
+            v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
+            ]
 		} 	
 	},
 	methods: {
