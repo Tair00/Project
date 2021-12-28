@@ -79,6 +79,7 @@ export default {
 	const user = {
 		email: this.email,
 		password: this.password
+		
 	}
 	this.$store.dispatch('registerUser', user)
 	.then(() => {
@@ -93,5 +94,6 @@ export default {
 			}
 		}
 	}
+
 
 </script>
