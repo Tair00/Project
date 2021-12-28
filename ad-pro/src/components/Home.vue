@@ -5,14 +5,12 @@
 			<v-flex xs12>
 				<v-carousel>
 					<v-carousel-item
-					v-for="ad in promoAds"
+					v-for="ad in ads"
 					:key="ad.id"
 					:src="ad.src"
 					>
                     <div class="ad-link">
-							<v-btn 
-                            class= "error" 
-                            :to="'/ad/' + ad.id"> 
+							<v-btn class= "error" :to="'/ad/' + ad.id"> 
                                 {{ad.title}}
 							</v-btn>
                     </div>
@@ -57,8 +55,8 @@
 
 <script>
 export default {
-	
 computed:  { 
+	
 	promoAds() {
 		return this.$store.getters.promoAds
 	},

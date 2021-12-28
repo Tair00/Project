@@ -1,15 +1,6 @@
-
 import fb from 'firebase'
 
-class User {
-	constructor(id) {
-		this.id = id
-	}
-}
-
-
 export default {
-	
 	state: {
      user: null
 },
@@ -20,16 +11,21 @@ mutations: {
 	},
 	actions: {
 		registerUser({commit},{email, password}){
-		fb.auth().createUserWithEmailAndPassword(email,password).then(response => {
+ fb.auth().createUserWithEmailAndPassword(email,password).then(response => {
 					console.log(response.user.uid)
 					commit('setUser', new User(response.user.uid))
 	})
 	}
-	},
-	
+	},	
 	getters: {
      user(state) {
-    return state.user
+            return state.user
 	}
 }
 }
+class User {
+	constructor(id) {
+		this.id = id
+	}
+}
+
