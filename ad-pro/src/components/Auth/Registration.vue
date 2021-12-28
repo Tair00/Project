@@ -40,7 +40,8 @@
 					<v-btn 
 					color="primary"
 					@click="onSubmit"
-					:disabled="!valid"
+					:loading="loading"
+					:disabled="!valid || loading"	>
 					>
 						Create Account
 					</v-btn>
