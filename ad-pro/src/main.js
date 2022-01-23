@@ -1,13 +1,13 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import router from '../router/index'
-import store from './store'
-import fb from 'firebase'
+import Vue from 'vue';
+import Router from 'vue-router';
+import App from './App.vue';
+import vuetify from './plugins/vuetify';
+import router from './router/index';
+import store from './store';
+import fb from 'firebase';
 
-Vue.use(Router)
-Vue.config.productionTip = false
+Vue.use(Router);
+Vue.config.productionTip = false;
 
 new Vue({
   vuetify,
@@ -15,18 +15,25 @@ new Vue({
   router:router,
   store,
   created(){
-  var firebaseConfig = {
-    apiKey: "AIzaSyCP3B9ISQ9Q0I-rVMCNKCe3FuL6ldkE4rE",
-    authDomain: "vue-ads-2021.firebaseapp.com",
-    projectId: "vue-ads-2021",
-    storageBucket: "vue-ads-2021.appspot.com",
-    messagingSenderId: "197397540349",
-    appId: "1:197397540349:web:e642a60bfbde2d5baffd94",
-    measurementId: "G-GW0BDMX9PS"
-  };
-  // Initialize Firebase
-  fb.initializeApp(firebaseConfig);
-  fb.analytics();
-  }
+    var firebaseConfig = {
+		apiKey: "AIzaSyBLmJ4QLslMWVdxaQnj9AexLY3mhVadUd4",
+		authDomain: "ad-pro-ee8bc.firebaseapp.com",
+		projectId: "ad-pro-ee8bc",
+		storageBucket: "ad-pro-ee8bc.appspot.com",
+		messagingSenderId: "435424741916",
+		appId: "1:435424741916:web:662809eb39b7b51b256dd9",
+		measurementId: "G-WB6WZVJFR0"
+	};
+	
+	// Initialize Firebase
+	fb.initializeApp(firebaseConfig);
+	fb.getAnalytics();
+	fb.auth().onAuthStateChanged(user => {
+		if (user) {
+			this.$store.dispatch('autoLoginUser', user)
+		}
+   })
+  
 
-}).$mount('#app')
+}
+}).$mount('#app');
