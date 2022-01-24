@@ -13,7 +13,7 @@ class Ad {
 
 export default {
 	state: {
-		ads:[/*
+		ads:[
                 {
                     title:"First",
                     desc:"First Desc",
@@ -42,7 +42,7 @@ export default {
                     src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
                     id:"4"
                 }
-            */]
+            ]
     },
     mutations: {
         createAd(state, payload){
